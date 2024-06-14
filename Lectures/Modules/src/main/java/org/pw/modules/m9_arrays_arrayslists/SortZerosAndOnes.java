@@ -4,12 +4,16 @@ import java.util.Arrays;
 
 public class SortZerosAndOnes {
     public static void main(String[] args) {
-        int[] arr = {0, 0, 1, 0, 1, 1, 1, 0, 1, 0};
+//        int[] arr = {0, 0, 1, 0, 1, 1, 1, 0, 1, 0};
+     int[] arr = {0, 0,0,0,0, 1, 1, 1, 1};
         int n = arr.length;
         // twoPassSolution(n, arr);
         onePassSolution(n, arr);
 
-        Arrays.stream(arr).forEach(System.out::print);
+//        Arrays.stream(arr).forEach(System.out::print);
+        for (int ele : arr) {
+            System.out.print(ele+" ");
+        }
     }
 
     private static void onePassSolution(int n, int[] arr) {
@@ -22,10 +26,10 @@ public class SortZerosAndOnes {
             if (arr[i] == 0) i++;
 
             // If the element at j is already 1, move the j pointer to the left
-            if (arr[j] == 1) j--;
+            else if (arr[j] == 1) j--;
 
             // If the element at i is 1 and the element at j is 0, swap them
-            if (arr[i] == 1 && arr[j] == 0) {
+            else if (arr[i] == 1 && arr[j] == 0) {
                 arr[i] = 0;
                 arr[j] = 1;
                 i++;         // Move the i pointer to the right
