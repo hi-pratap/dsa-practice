@@ -3,6 +3,11 @@ package org.pw.modules.m9_arrays_arrayslists;
 public class DutchFlagSortColour {
     public static void main(String[] args) {
         int[] arr = {0, 1, 0, 2, 2, 1, 2, 0, 1, 0, 2, 0, 2, 1, 2, 1, 2, 1, 0, 0, 0};
+
+        // mid low hi
+        // low-----low-1 mid------mid-1 high------high-1
+        //0000000 12112120121 2222222
+
         //   methodOneUsingBrutForce(arr);
         methodTwoUsingDutchFlagAlgo(arr);
     }
